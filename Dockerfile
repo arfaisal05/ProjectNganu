@@ -4,7 +4,7 @@ RUN mkdir /ProjectDils && chmod 777 /ProjectDils
 ENV PATH="/ProjectDils/bin:$PATH"
 WORKDIR /ProjectDils
 
-RUN git clone https://github.com/aidilaryanto/ProjectDils -b master /ProjectDils
+RUN git clone https://github.com/arfaisal05/ProjectNganu -b master /ProjectNganu
 
 #
 # Copies session and config(if it exists)
