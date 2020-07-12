@@ -133,7 +133,7 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     logo = ALIVE_LOGO
     output = ("`"
-             "ProjectDils is running...\n"
+             "ProjectNganu is running...\n"
              f"•••••••••••••••••••••••••••••••••••••••\n"
              f"👤 User     : {DEFAULTUSER}\n"
              f"🐍 Python   : v{python_version()}\n"
