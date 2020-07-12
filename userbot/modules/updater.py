@@ -94,7 +94,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 '`Invalid Heroku credentials for deploying userbot dyno.`'
             )
             return repo.__del__()
-        await event.edit('`ProjectDils deploy in progress, please wait...`')
+        await event.edit('`ProjectNganu deploy in progress, please wait...`')
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -130,10 +130,10 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit('`Successfully Updated!\n'
-                     'ProjectDils is restarting... Wait for a second!`')
+                     'ProjectNganu is restarting... Wait for a second!`')
     if BOTLOG:
        await event.client.send_message(BOTLOG_CHATID, "#UPDATE \n"
-                                    "ProjectDils was successfully updated")
+                                    "ProjectNganu was successfully updated")
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
@@ -199,7 +199,7 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            '\n`ProjectDils is`  **up-to-date**  `with`  '
+            '\n`ProjectNganu is`  **up-to-date**  `with`  '
             f'**{UPSTREAM_REPO_BRANCH}**\n')
         return repo.__del__()
 
