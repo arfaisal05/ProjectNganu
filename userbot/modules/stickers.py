@@ -36,9 +36,9 @@ KANGING_STR = [
 ]
 
 
-@register(outgoing=True, pattern="^.kang")
+@register(outgoing=True, pattern="^.get")
 async def kang(args):
-    """ For .kang command, kangs stickers or creates new ones. """
+    """ For .get command, kangs stickers or creates new ones. """
     user = await bot.get_me()
     if not user.username:
         user.username = user.first_name
@@ -309,7 +309,7 @@ async def get_pack_info(event):
     await event.edit(OUTPUT)
 
 
-@register(outgoing=True, pattern="^.getsticker$")
+@register(outgoing=True, pattern="^.imgstck$")
 async def sticker_to_png(sticker):
     if not sticker.is_reply:
         await sticker.edit("`NULL information to fetch...`")
@@ -341,14 +341,14 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update({
     "stickers":
-    ">`.kang [emoji('s)]?`"
+    ">`.get [emoji('s)]?`"
     "\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack "
     "\nor specify the emoji you want to."
-    "\n\n>`.kang (emoji['s]]?` [number]?"
+    "\n\n>`.get (emoji['s]]?` [number]?"
     "\nUsage: Kang's the sticker/image to the specified pack but uses 🤔 as emoji "
     "or choose the emoji you want to."
     "\n\n>`.stkrinfo`"
     "\nUsage: Gets info about the sticker pack."
-    "\n\n>`.getsticker`"
+    "\n\n>`.imgstck`"
     "\nUsage: reply to a sticker to get 'PNG' file of sticker."
 })
