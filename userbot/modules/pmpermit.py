@@ -225,9 +225,9 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@register(outgoing=True, pattern="^.block$")
+@register(outgoing=True, pattern="^.goblok$")
 async def blockpm(block):
-    """ For .block command, block people from PMing you! """
+    """ For .goblok command, block people from PMing you! """
     if block.reply_to_msg_id:
         reply = await block.get_reply_message()
         replied_user = await block.client.get_entity(reply.from_id)
@@ -256,7 +256,7 @@ async def blockpm(block):
         )
 
 
-@register(outgoing=True, pattern="^.unblock$")
+@register(outgoing=True, pattern="^.ungoblok$")
 async def unblockpm(unblock):
     """ For .unblock command, let people PMing you again! """
     if unblock.reply_to_msg_id:
@@ -280,9 +280,9 @@ CMD_HELP.update({
     "\nUsage: Approves the mentioned/replied person to PM."
     "\n\n>`.disapprove`"
     "\nUsage: Disapproves the mentioned/replied person to PM."
-    "\n\n>`.block`"
+    "\n\n>`.goblok`"
     "\nUsage: Blocks the person."
-    "\n\n>`.unblock`"
+    "\n\n>`.ungoblok`"
     "\nUsage: Unblocks the person so they can PM you."
     "\n\n>`.notifoff`"
     "\nUsage: Clears/Disables any notifications of unapproved PMs."
